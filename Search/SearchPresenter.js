@@ -40,6 +40,7 @@ export default ({ movies, tv, onChange, onSubmit, keyword }) => (
       <HorizontalSlider title={"TV 프로그램 검색 결과"}>
         {tv.map((tv) => (
           <Vertical
+            isTv={true}
             key={tv.id}
             id={tv.id}
             votes={tv.vote_average}

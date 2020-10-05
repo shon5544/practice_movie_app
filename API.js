@@ -1,6 +1,13 @@
 import axios from "axios";
+import { min } from "react-native-reanimated";
 
 const TMDB_KEY = "a2b8d720c4a07aaa524073dfe98190a9";
+
+const getRandom = () => {
+  m = Math.ceil(2);
+  M = Math.floor(6);
+  return Math.floor(Math.random() * (M - m + 1)) + min;
+};
 
 const makeRequest = (path, params) =>
   axios.get(`https://api.themoviedb.org/3${path}`, {
@@ -14,9 +21,11 @@ const getAnything = async (path, params = {}) => {
   try {
     const {
       data: { results },
+      data,
     } = await makeRequest(path, params);
     return [results || data, null];
   } catch (e) {
+    console.log(e);
     return [null, e];
   }
 };
@@ -36,7 +45,10 @@ export const movieApi = {
       append_to_response: "videos",
     }),
   discover: () =>
-    getAnything("/discover/movie", { language: "ko", region: "kr" }),
+    getAnything("/discover/movie", {
+      language: "ko",
+      region: "kr",
+    }),
 };
 
 export const tvApi = {

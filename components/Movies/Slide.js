@@ -78,6 +78,7 @@ const Slide = ({
       votes,
       overview,
       poster,
+      isTv,
     });
   return (
     <Container>

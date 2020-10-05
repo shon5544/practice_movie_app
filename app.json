@@ -1,26 +1,39 @@
 {
   "expo": {
-    "name": "soovies",
+    "name": "왓치 타임: 영화 | TV프로그램 뷰어",
     "slug": "soovies",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "primaryColor": "#000000",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
+    "android": {
+      "package": "com.yourcompany.yourappname",
+      "versionCode": 1
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.yourappname",
+      "buildNumber": "1.0.0"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "androidStatusBar": {
+      "barstyle": "dark-content",
+      "backgroundColor": "#000000"
+    },
+    "androidNavigationBar": {
+      "barstyle": "dark-content",
+      "backgroundColor": "#000000"
     }
   }
 }
